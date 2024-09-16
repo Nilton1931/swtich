@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         let resultado;
+let operador = prompt('Deseja escolher +, -, * ou /');
+let number1 = Number(prompt('Digite o primeiro valor: '));
+let number2 = Number(prompt('Digite o segundo valor: '));
+
+switch (operador) {
+    case '+':
+        resultado = number1 + number2;
+        console.log(`${number1} + ${number2} = ${resultado}`);
+        break;
+    case '-':
+        resultado = number1 - number2;
+        console.log(`${number1} - ${number2} = ${resultado}`);
+        break;
+    case '*':
+        resultado = number1 * number2;
+        console.log(`${number1} * ${number2} = ${resultado}`);
+        break;
+    case '/':
+        if (number2 === 0) {
+            console.log('Não é possível dividir por zero.');
+        } else {
+            resultado = number1 / number2;
+            console.log(`${number1} / ${number2} = ${resultado}`);
+        }
+        break;
+    default:
+        console.log('Operação inválida');
+        break;
+}
+
+    </script>
+</body>
+</html>
