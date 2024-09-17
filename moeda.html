@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function converterMoeda(valor, de, para) {
+    const taxas = {
+        BRL: { USD: 0.20, GBP: 0.16 },
+        USD: { BRL: 5.00, GBP: 0.80 },
+        GBP: { BRL: 6.25, USD: 1.25 }
+    };
+
+    return valor * (taxas[de] && taxas[de][para]);
+}
+
+
+const moedaDe = prompt('Digite a moeda de origem (BRL, USD, GBP):').toUpperCase();
+
+
+const moedaPara = prompt('Digite a moeda de destino (BRL, USD, GBP):').toUpperCase();
+
+
+const valor = Number(prompt('Digite o valor a ser convertido: '));
+
+
+const resultado = converterMoeda(valor, moedaDe, moedaPara);
+
+if (resultado) {
+    console.log(`${valor} ${moedaDe} é igual a ${resultado.toFixed(2)} ${moedaPara}`);
+} else {
+    console.log('Conversão inválida. Verifique as moedas e o valor inserido.');
+}
+    </script>
+</body>
+</html>
